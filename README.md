@@ -22,6 +22,13 @@ $ make
 ## Running
 
 From `build/` folder.
+
 ```
 $ env $(cat ../.env | xargs) ./getstatus
+```
+
+Convenience command (from root directory):
+
+```
+make -C build/ && env $(cat .env | xargs) ./build/getstatus
 ```

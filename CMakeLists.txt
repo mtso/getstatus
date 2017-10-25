@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.7)
-project(basic-json)
+project(getstatus)
 
 if(NOT ${CMAKE_VERSION} LESS 3.2)
     set(CMAKE_CXX_STANDARD 11)
@@ -34,6 +34,6 @@ add_subdirectory(opt)
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 FILE(GLOB SOURCE_FILES ${SRC_DIR}/*.h ${SRC_DIR}/*.cpp)
 
-add_executable(main ${SOURCE_FILES})
-target_link_libraries(main ${CPR_LIBRARIES})
+add_executable(getstatus ${SOURCE_FILES})
+target_link_libraries(getstatus ${CPR_LIBRARIES})
 include_directories(${CPR_INCLUDE_DIRS} ${JSON_INCLUDE_DIRS} ${SRC_DIR})

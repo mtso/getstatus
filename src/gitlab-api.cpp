@@ -1,10 +1,10 @@
+#include "gitlab-api.h"
+#include "util.h"
+
 #include <string>
 #include <vector>
 #include <cpr/cpr.h>
 #include <json.hpp>
-
-#include "gitlab-api.h"
-#include "util.h"
 
 namespace getstatus {
 
@@ -75,4 +75,4 @@ std::vector<std::string> GitlabApi::get_commits_all() {
     return all_commits;
 }
 
-}
+} // namespace getstatus

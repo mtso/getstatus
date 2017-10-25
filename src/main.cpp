@@ -1,8 +1,8 @@
+#include "gitlab-api.h"
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
-#include "gitlab-api.h"
 
 const char* KEY_TOKEN = "GITLAB_TOKEN";
 const char* KEY_PROJECTID = "GITLAB_PROJECTID";

@@ -1,5 +1,5 @@
-#ifndef GS_COMMIT
-#define GS_COMMIT
+#ifndef GS_COMMIT_H
+#define GS_COMMIT_H
 
 namespace getstatus {
 
@@ -18,6 +18,6 @@ public:
            std::string);
 }
 
-}
+} // namespace getstatus
 
 #endif

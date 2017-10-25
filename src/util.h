@@ -1,5 +1,5 @@
-#ifndef GS_UTIL
-#define GS_UTIL
+#ifndef GS_UTIL_H
+#define GS_UTIL_H
 
 #include <string>
 #include <chrono>
@@ -45,6 +45,6 @@ namespace getstatus {
         return std::string(buffer);
     }
 
-}
+} // namespace getstatus
 
 #endif

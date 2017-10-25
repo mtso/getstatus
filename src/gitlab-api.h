@@ -1,5 +1,5 @@
-#ifndef GITLAB_API
-#define GITLAB_API
+#ifndef GS_GITLABAPI_H
+#define GS_GITLABAPI_H
 
 #include <string>
 #include <vector>
@@ -32,6 +32,6 @@ public:
     std::vector<std::string> get_commits_all();
 };
 
-}
+} // namespace getstatus
 
 #endif

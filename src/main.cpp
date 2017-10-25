@@ -33,18 +33,30 @@ int main(int argc, char** argv) {
 
     api = new getstatus::GitlabApi(token, project_id);
 
-    std::vector<std::string> branches;
+    std::vector<std::string> commits;
     try {
-        branches = api->get_branches();
+        commits = api->get_commits("development");
     }
     catch (std::runtime_error e) {
         std::cerr << e.what() << std::endl;
         return 0;
     }
 
-    for (int i = 0; i < branches.size(); i++) {
-        std::cout << branches[i] << std::endl;
+    for (int i = 0; i < commits.size(); i++) {
+        std::cout << commits[i] << std::endl;
     }
+    // std::vector<std::string> branches;
+    // try {
+    //     branches = api->get_branches();
+    // }
+    // catch (std::runtime_error e) {
+    //     std::cerr << e.what() << std::endl;
+    //     return 0;
+    // }
+
+    // for (int i = 0; i < branches.size(); i++) {
+    //     std::cout << branches[i] << std::endl;
+    // }
     
     return 0;
 }

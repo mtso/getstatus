@@ -1,4 +1,4 @@
-# getstatus
+# getstatus [![Build Status](https://travis-ci.org/mtso/getstatus.svg?branch=master)](https://travis-ci.org/mtso/getstatus)
 
 GitLab JSON API fetcher.
 

@@ -21,13 +21,19 @@ $ make
 
 ## Running
 
+### Credentials
+
+You will need a GitLab API token ([get here](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)) and the project ID from `/api/v4/projects?search=[name]&private_token=`.
+
+### Commands
+
 From `build/` folder.
 
 ```
 $ env $(cat ../.env | xargs) ./getstatus
 ```
 
-Convenience command (from root directory):
+Convenience build and run command (from root directory):
 
 ```
 make -C build/ && env $(cat .env | xargs) ./build/getstatus

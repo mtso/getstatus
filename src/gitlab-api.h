@@ -25,8 +25,11 @@ public:
     /// Fetch branches.
     std::vector<std::string> get_branches();
 
-    /// Fetch commits.
-    std::vector<std::string> get_commits();
+    /// Fetch commits from one ref_name.
+    std::vector<std::string> get_commits(std::string);
+
+    /// Fetch all commits from this repository.
+    std::vector<std::string> get_commits_all();
 };
 
 }

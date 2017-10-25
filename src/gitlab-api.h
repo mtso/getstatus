@@ -1,6 +1,8 @@
 #ifndef GS_GITLABAPI_H
 #define GS_GITLABAPI_H
 
+#include "commit.h"
+
 #include <string>
 #include <vector>
 
@@ -22,14 +24,17 @@ public:
     GitlabApi(std::string api_token, std::string project_id);
     ~GitlabApi() { }
 
+    /// Returns a list of commits found unique by hash ID.
+    std::vector<Commit> filter_unique(std::vector<Commit>);
+
     /// Fetch branches.
     std::vector<std::string> get_branches();
 
     /// Fetch commits from one ref_name.
-    std::vector<std::string> get_commits(std::string);
+    std::vector<Commit> get_commits(std::string);
 
     /// Fetch all commits from this repository.
-    std::vector<std::string> get_commits_all();
+    std::vector<Commit> get_commits_all();
 };
 
 } // namespace getstatus

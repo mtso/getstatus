@@ -23,7 +23,7 @@ $ make
 
 ### Credentials
 
-You will need a GitLab API token ([get here](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)) and the project ID from `/api/v4/projects?search=[name]&private_token=`.
+You will need a GitLab API token ([get here](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)) and the project ID from `/api/v4/projects?search=[name]&private_token=`. Create and populate the `.env` file in the format of the `.env.example`.
 
 ### Commands
 

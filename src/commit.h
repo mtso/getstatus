@@ -14,6 +14,7 @@ private:
     std::string id;
     std::string timestamp;
 public:
+    Commit() { };
     Commit(std::string,
            std::string,
            std::string,
@@ -21,6 +22,10 @@ public:
            std::string);
     ~Commit() {};
     friend std::ostream& operator<< (std::ostream&, const Commit&);
+
+    std::string get_committer();
+
+    std::string get_id();
 };
 
 } // namespace getstatus

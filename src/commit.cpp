@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 namespace getstatus {
 
@@ -18,8 +19,16 @@ Commit::Commit(std::string committer,
 }
 
 std::ostream& operator << (std::ostream &out, const Commit &c) {
-    out << c.id << ": " << c.title;
+    out << c.id << " (" << c.committer << "): " << c.title;
     return out;
+}
+
+std::string Commit::get_committer() {
+  return this->committer;
+}
+
+std::string Commit::get_id() {
+  return this->id;
 }
 
 } // namespace getstatus

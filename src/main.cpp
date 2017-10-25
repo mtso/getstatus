@@ -1,9 +1,11 @@
 #include "gitlab-api.h"
+#include "commit.h"
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <stdexcept>
+#include <map>
 
 const char* KEY_TOKEN = "GITLAB_TOKEN";
 const char* KEY_PROJECTID = "GITLAB_PROJECTID";
@@ -22,6 +24,7 @@ int main(int argc, char** argv) {
     std::string token;
     std::string project_id;
     getstatus::GitlabApi *api;
+    std::vector<getstatus::Commit> commits;
 
     try {
         token = mustget(KEY_TOKEN);
@@ -33,31 +36,19 @@ int main(int argc, char** argv) {
     }
 
     api = new getstatus::GitlabApi(token, project_id);
-
-    std::vector<std::string> commits;
+    
     try {
-        commits = api->get_commits("development");
+        commits = api->get_commits_all();
     }
     catch (std::runtime_error e) {
         std::cerr << e.what() << std::endl;
         return 0;
     }
 
+    commits = api->filter_unique(commits);
     for (int i = 0; i < commits.size(); i++) {
         std::cout << commits[i] << std::endl;
     }
-    // std::vector<std::string> branches;
-    // try {
-    //     branches = api->get_branches();
-    // }
-    // catch (std::runtime_error e) {
-    //     std::cerr << e.what() << std::endl;
-    //     return 0;
-    // }
-
-    // for (int i = 0; i < branches.size(); i++) {
-    //     std::cout << branches[i] << std::endl;
-    // }
     
     return 0;
 }

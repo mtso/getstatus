@@ -2,17 +2,12 @@
 #include <string>
 #include <cstdlib>
 
-#include <cpr/cpr.h>
-#include <json.hpp>
+#include "gitlab-api.h"
 
 int main(int argc, char** argv) {
-    std::string json_url = "https://jsonbin.io/b/59eeea97ed25d0573bf19888";
+    std::string token = std::getenv("GITLAB_TOKEN");
+    std::string project_id = std::getenv("GITLAB_PROJECTID");
+    getstatus::GitlabApi *api = new getstatus::GitlabApi(token, project_id);
 
-    auto response = cpr::Get(cpr::Url{json_url});
-    auto json = nlohmann::json::parse(response.text);
-    auto list = json["list"];
-
-    for (int i = 0; i < list.size(); i++) {
-        std::cout << list[i] << std::endl;
-    }
+    std::cout << api->get_branches() << std::endl;
 }

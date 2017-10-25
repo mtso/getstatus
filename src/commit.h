@@ -1,6 +1,9 @@
 #ifndef GS_COMMIT_H
 #define GS_COMMIT_H
 
+#include <iostream>
+#include <string>
+
 namespace getstatus {
 
 class Commit {
@@ -16,7 +19,9 @@ public:
            std::string,
            std::string,
            std::string);
-}
+    ~Commit() {};
+    friend std::ostream& operator<< (std::ostream&, const Commit&);
+};
 
 } // namespace getstatus
 

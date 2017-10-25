@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept>
 #include <cpr/cpr.h>
 #include <json.hpp>
 

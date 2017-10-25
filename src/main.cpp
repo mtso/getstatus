@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <stdexcept>
 
 const char* KEY_TOKEN = "GITLAB_TOKEN";
 const char* KEY_PROJECTID = "GITLAB_PROJECTID";

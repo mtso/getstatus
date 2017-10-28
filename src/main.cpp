@@ -38,14 +38,15 @@ int main(int argc, char** argv) {
     api = new getstatus::GitlabApi(token, project_id);
     
     try {
-        commits = api->get_commits_all();
+        auto all = api->get_commits_all();
+        commits = api->filter_unique(all);
     }
     catch (std::runtime_error e) {
         std::cerr << e.what() << std::endl;
         return 0;
     }
 
-    commits = api->filter_unique(commits);
+    
     for (int i = 0; i < commits.size(); i++) {
         std::cout << commits[i] << std::endl;
     }

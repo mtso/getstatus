@@ -17,8 +17,11 @@ endmacro()
 
 include_directories(
     ${GETSTATUS_INCLUDE_DIRS}
+    ${GTEST_INCLUDE_DIRS}
     ${CPR_INCLUDE_DIRS}
-    ${JSON_INCLUDE_DIRS}
-    ${GTEST_INCLUDE_DIRS})
+    ${JSON_INCLUDE_DIRS})
+    # ${CHANNEL_INCLUDE_DIRS}) need to add back in if the getstatus includes
+    #                          uses <channel> as a dependency.
 
 add_getstatus_test(fetch)
+add_getstatus_test(util)

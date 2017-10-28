@@ -30,11 +30,11 @@ You will need a GitLab API token ([get here](https://docs.gitlab.com/ce/user/pro
 From `build/` folder.
 
 ```
-$ env $(cat ../.env | xargs) ./getstatus
+$ env $(cat ../.env | xargs) ./bin/getstatus
 ```
 
 Convenience build and run command (from root directory):
 
 ```
-make -C build/ && env $(cat .env | xargs) ./build/getstatus
+make -C build/ && env $(cat .env | xargs) ./build/bin/getstatus
 ```

@@ -1,9 +1,11 @@
 #ifndef GS_UTIL_H
 #define GS_UTIL_H
 
+#include "commit.h"
+
 #include <string>
 #include <chrono>
-
+#include <vector>
 #include <cstdlib>
 #include <iostream>
 
@@ -43,6 +45,13 @@ namespace getstatus {
         );
 
         return std::string(buffer);
+    }
+
+    std::vector<Commit> & operator +=(std::vector<Commit> &target, const std::vector<Commit> &source) {
+        for (int i = 0; i < source.size(); i++) {
+            target.push_back(source[i]);
+        }
+        return target;
     }
 
 } // namespace getstatus

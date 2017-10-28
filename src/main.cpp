@@ -49,6 +49,10 @@ int main(int argc, char** argv) {
     for (int i = 0; i < commits.size(); i++) {
         std::cout << commits[i] << std::endl;
     }
+
+    if (commits.size() == 0) {
+        std::cout << "No commits found." << std::endl;
+    }
     
     return 0;
 }
